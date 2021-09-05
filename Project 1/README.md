@@ -72,6 +72,8 @@
 
 - Finally, I type ```ls -lah``` to show all the contents of my home directory and showing that I have successfully cloned the git repository.
 
+![clone from system](project.PNG)
 
+![git repository in aws](project2.PNG)
 
 
