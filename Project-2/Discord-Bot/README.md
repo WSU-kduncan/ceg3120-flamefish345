@@ -19,14 +19,14 @@
 
 - First go to the Discord Developer Portal and click on your application.
 
-![Discord Developer Portal Home Screen](discorddevportal#1.png)
+![Discord Developer Portal Home Screen](discorddevportal#1.PNG)
 
 - This will take you to 'General Information'
 
-![Application General Information](discorddevportal#2.png)
+![Application General Information](discorddevportal#2.PNG)
 
 - Next click on 'OAuth2', this will take you to your bot's API key page
 
-![OAuth2 page](discorddevportal#3.png)
+![OAuth2 page](discorddevportal#3.PNG)
 
 - At this point, Discord should have changed your API key when it became exposed on GitHub but if you need to, click on the 'Regenerate' button to create a new key and then click 'Copy' to copy the key to paste into your .env file in Visual Studio Code or WSL.
