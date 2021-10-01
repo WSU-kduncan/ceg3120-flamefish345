@@ -34,3 +34,13 @@
 ![.env file in Visual Studio Code](envfile.PNG)
 
 ![.env file in WSL Ubuntu](envfileWSL.PNG)
+
+# Hiding your API key on GITHub
+
+- Before we commit your .env file to the repository, first we must add the file to a special folder that will obscure certain files from being seen through places like GitHub. In turn, this will prevent your API key from being exposed resulting in the error shown earlier.
+
+- If you have not already, create a new folder using VSC called ".gitignore".
+
+- Then, type in your .gitignore folder the file path of your .env file.
+
+![gitignore shown on Visual Studio Code](gitignore.PNG)
