@@ -30,3 +30,5 @@
 ![OAuth2 page](discorddevportal#3.PNG)
 
 - At this point, Discord should have changed your API key when it became exposed on GitHub but if you need to, click on the 'Regenerate' button to create a new key and then click 'Copy' to copy the key to paste into your .env file in Visual Studio Code or WSL.
+
+![.env file in Visual Studio Code](envfile.PNG)
