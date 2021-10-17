@@ -8,10 +8,18 @@
 - This gives my the VPC the range of possible private IP addresses on my network. A /28 block will give me access to 14 useable private IP addresses.
 ![My Subnet](project3-2.png)
 
-
+# My Internet Gateway
 
 ![My Internet Gateway](project3-3.png)
 
+# My Routing Table
+
 ![My Routing Table](project3-4.png)
 
+# My Security Group
+
 ![My Security Group](project3-5.png)
+
+# My AWS Instance
+
+![My AWS Instance](project3-6.png)
