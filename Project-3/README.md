@@ -23,3 +23,7 @@
 # My AWS Instance
 
 ![My AWS Instance](project3-6.png)
+
+# Connecting to my AWS Instance
+
+![Connecting to AWS Instance](project3-7.png)
