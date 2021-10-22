@@ -1,3 +1,4 @@
+# Minor CF Template to create a VPC, allow SSH access from trusted networks, and create a single instance with an Elastic IP address
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
   Testing area for AWS: This template builds a linux VM for CEG 2350 @ WSU.
