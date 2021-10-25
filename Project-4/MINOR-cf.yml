@@ -132,5 +132,15 @@ Resources:
             #!/bin/bash -xe
             apt-get update && \
             apt-get install -y \
-              replace-me && \
+              python \
+              nmap \
+              vim \
+              git \
+              wget \
+              make \
+              cmake \
+              openjdk-11-jdk \
+              build-essential \
+              python-dev \
+              python3-dev && \
             reboot
