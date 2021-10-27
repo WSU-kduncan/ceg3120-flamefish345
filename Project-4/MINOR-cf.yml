@@ -1,7 +1,7 @@
-# Minor CF Template to create a VPC, allow SSH access from trusted networks, and create a single instance with an Elastic IP address
+
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
-  Testing area for AWS: This template builds a linux VM for CEG 2350 @ WSU.
+   Minor CF Template to create a VPC, allow SSH access from trusted networks, and create a single instance with an Elastic IP address.
 Parameters:
   KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
@@ -20,32 +20,32 @@ Mappings:
     t2.micro:
       Arch: HVM64
   AWSRegionUbuntu: # AMI for Ubuntu server in each supported region 
-    us-east-1:   # N. Virginia
+    us-east-1: # N. Virginia
       PV64: NOT_SUPPORTED
-      HVM64: ami-07d0cf3af28718ef8
+      HVM64: ami-09e67e426f25ce0d7
       HVMG2: NOT_SUPPORTED
 Resources:
   VPC:
     Type: 'AWS::EC2::VPC'
     Properties:
-      CidrBlock: 10.0.0.0/16
+      CidrBlock: 10.0.0.0/24
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
-          Value: CEG2350 VPC
+          Value: MINOR_VPC
   Subnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPC
-      CidrBlock: 10.0.0.0/24
-      Tags:
+      CidrBlock: 10.0.0.0/28
+      Tags: MINOR_Subnet
         - Key: Application
           Value: !Ref 'AWS::StackId'
   InternetGateway:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
-      Tags:
+      Tags: MINOR_gw
         - Key: Application
           Value: !Ref 'AWS::StackId'
   AttachGateway:
@@ -57,7 +57,7 @@ Resources:
     Type: 'AWS::EC2::RouteTable'
     Properties:
       VpcId: !Ref VPC
-      Tags:
+      Tags: MINOR_routetable
         - Key: Application
           Value: !Ref 'AWS::StackId'
   Route:
@@ -87,7 +87,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
-          CidrIp: !Ref SSHLocation
+          CidrIp: 192.168.1.205/32
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
@@ -95,7 +95,7 @@ Resources:
         - IpProtocol: -1
           FromPort: '-1'
           ToPort: '-1'
-          CidrIp: 10.0.0.0/24
+          CidrIp: 10.0.0.0/28
   PublicUbuntuInstance:
     Type: 'AWS::EC2::Instance'
     DependsOn: AttachGateway
