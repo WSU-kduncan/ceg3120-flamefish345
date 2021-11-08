@@ -80,7 +80,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
-          CidrIp: 10.0.0.0/16 # VPC as a whole.  EC 10.0.0.0/24
+          CidrIp: 10.0.0.0/24 # VPC as a whole.  EC 10.0.0.0/24
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
@@ -88,8 +88,15 @@ Resources:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
-          CidrIp: 130.108.15.32/32  # Replace with home / trusted public IP
-          # Need more rules for port 80
+          CidrIp: 192.168.1.205/32  # Replace with home / trusted public IP
+          IpProtocol: html # Need more rules for port 80
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 10.0.0.0/24
+          IpProtocol: html
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 0.0.0.0/0  
   # This defines one instance.  Make two more instances based on this (but no elastic IP)        
   PublicUbuntuInstance:
     Type: 'AWS::EC2::Instance'
@@ -152,6 +159,41 @@ Resources:
           DeleteOnTermination: 'true'
           SubnetId: !Ref Subnet
           PrivateIpAddress: 10.0.0.26 # make sure unique to the instance
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash -xe
+            apt-get update && \
+            # need to install apache or nginx
+            apt-get install -y git && \
+            hostnamectl 
+            reboot
+    WebServ2Instance:
+      Type: 'AWS::EC2::Instance'
+      DependsOn: AttachGateway
+      Properties:
+        ImageId: !FindInMap 
+          - AWSRegionUbuntu
+          - !Ref 'AWS::Region'
+          - !FindInMap 
+            - AWSInstanceType2Arch
+            - t2.micro
+            - Arch
+      InstanceType: t2.micro
+      KeyName: !Ref KeyName
+      Tags:
+        - Key: Application
+          Value: !Ref 'AWS::StackId'
+        - Key: Name
+          Value: webserv1
+      NetworkInterfaces:
+        - GroupSet:
+            - !Ref Lab1SecurityGroup
+          AssociatePublicIpAddress: 'false'
+          DeviceIndex: '0'
+          DeleteOnTermination: 'true'
+          SubnetId: !Ref Subnet
+          PrivateIpAddress: 10.0.0.27 # make sure unique to the instance
       UserData:
         Fn::Base64:
           !Sub |
