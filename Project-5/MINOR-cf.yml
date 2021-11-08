@@ -166,7 +166,7 @@ Resources:
       NetworkInterfaces:
         - GroupSet:
             - !Ref Lab1SecurityGroup
-          AssociatePublicIpAddress: 'false'
+          AssociatePublicIpAddress: 'true'
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref Subnet
@@ -201,7 +201,7 @@ Resources:
       NetworkInterfaces:
         - GroupSet:
             - !Ref Lab1SecurityGroup
-          AssociatePublicIpAddress: 'false'
+          AssociatePublicIpAddress: 'true'
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref Subnet
