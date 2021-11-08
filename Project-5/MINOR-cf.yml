@@ -71,6 +71,18 @@ Resources:
     Properties:
       Domain: vpc
       InstanceId: !Ref PublicUbuntuInstance
+  Web1IPAddress:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: AttachGateway
+    Properties:
+      Domain: vpc
+      InstanceId: !Ref WebServ1Instance
+  Web2IPAddress:
+    Type: 'AWS::EC2::EIP'
+    DependsOn: AttachGateway
+    Properties:
+      Domain: vpc
+      InstanceId: !Ref WebServ2Instance
   Lab1SecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
