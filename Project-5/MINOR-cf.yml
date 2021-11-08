@@ -141,7 +141,7 @@ Resources:
           !Sub |
             #!/bin/bash -xe
             apt-get update && \
-            # need to install haproxy
+            apt-get install -y # need to install haproxy
             apt-get install -y git python3 python3-pip && \
             hostnamectl set-hostname proxy && \
             reboot
@@ -176,7 +176,7 @@ Resources:
           !Sub |
             #!/bin/bash -xe
             apt-get update && \
-            # need to install apache or nginx
+            apt-get install -y apache2 && \ # need to install apache or nginx
             apt-get install -y git && \
             hostnamectl 
             reboot
@@ -211,7 +211,7 @@ Resources:
           !Sub |
             #!/bin/bash -xe
             apt-get update && \
-            # need to install apache or nginx
+            apt-get install -y apache2 && \ # need to install apache or nginx
             apt-get install -y git && \
             hostnamectl 
             reboot
