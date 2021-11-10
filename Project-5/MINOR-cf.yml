@@ -180,20 +180,20 @@ Resources:
             apt-get install -y git && \
             hostnamectl set-hostname web1 && \
             reboot
-    WebServ2Instance:
-      Type: 'AWS::EC2::Instance'
-      DependsOn: AttachGateway
-      Properties:
-        ImageId: !FindInMap 
-          - AWSRegionUbuntu
-          - !Ref 'AWS::Region'
-          - !FindInMap 
-            - AWSInstanceType2Arch
-            - t2.micro
-            - Arch
-      InstanceType: t2.micro
-      KeyName: !Ref KeyName
-      Tags:
+  WebServ2Instance:
+    Type: 'AWS::EC2::Instance'
+    DependsOn: AttachGateway
+    Properties:
+      ImageId: !FindInMap 
+        - AWSRegionUbuntu
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - t2.micro
+          - Arch
+    InstanceType: t2.micro
+    KeyName: !Ref KeyName
+       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
@@ -213,5 +213,5 @@ Resources:
             apt-get update && \
             apt-get install -y apache2 && \ # need to install apache or nginx
             apt-get install -y git && \
-            hostnamectl set-hostname web2 && \ 
+            hostnamectl set-hostname web2 && \
             reboot
