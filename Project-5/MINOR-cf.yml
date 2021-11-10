@@ -193,7 +193,7 @@ Resources:
           - Arch
     InstanceType: t2.micro
     KeyName: !Ref KeyName
-       Tags:
+      Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
