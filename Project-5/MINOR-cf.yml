@@ -100,7 +100,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
-          CidrIp: 192.168.1.205/32  # Replace with home / trusted public IP
+          CidrIp: 174.97.248.74/32  # Replace with home / trusted public IP
         - IpProtocol: tcp # Need more rules for port 80
           FromPort: '80'
           ToPort: '80'
