@@ -13,7 +13,7 @@ Mappings:
   AWSRegionUbuntu: # AMI for Ubuntu server in each supported region 
     us-east-1:   # N. Virginia
       PV64: NOT_SUPPORTED
-      HVM64: ami-09e67e426f25ce0d7 # AMI ID for Ubuntu 20 - Amazon Linux 2 AMI ami-02e136e904f3da870
+      HVM64: ami-083654bd07b5da81d # AMI ID for Ubuntu 20 - Amazon Linux 2 AMI ami-02e136e904f3da870
       HVMG2: NOT_SUPPORTED
 Resources:
   VPC:
