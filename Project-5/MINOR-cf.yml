@@ -178,7 +178,7 @@ Resources:
             apt-get update && \
             apt-get install -y apache2 && \ # need to install apache or nginx
             apt-get install -y git && \
-            hostnamectl 
+            hostnamectl set-hostname web1 && \
             reboot
     WebServ2Instance:
       Type: 'AWS::EC2::Instance'
@@ -213,5 +213,5 @@ Resources:
             apt-get update && \
             apt-get install -y apache2 && \ # need to install apache or nginx
             apt-get install -y git && \
-            hostnamectl 
+            hostnamectl set-hostname web2 && \ 
             reboot
