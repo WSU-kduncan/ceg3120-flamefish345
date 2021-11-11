@@ -25,3 +25,13 @@
 ![Connecting to web server 1](project5-2.png)
 
 ![Connecting to web server 2](project5-3.png)
+
+# How to install and configure HAProxy
+
+- In the CloudFormation template file the command to install haproxy was "apt-get install -y haproxy && \".
+
+- I believe, typing in "sudo install haproxy" in Linux should also install HAProxy as well.
+
+- Now to make sure that the HAProxy service is running, I type out a 'systemctl' command to get the status of the service.
+
+![Getting the status of HAProxy](project5-4.png)
