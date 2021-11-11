@@ -12,4 +12,4 @@
 
 - Then I press Ctrl + X to exit and press Y to save my /etc/hosts document
 
-![My /etc/hosts file](project5#1.png)
+![My /etc/hosts file](project5-1.png)
