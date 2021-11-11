@@ -13,3 +13,15 @@
 - Then I press Ctrl + X to exit and press Y to save my /etc/hosts document
 
 ![My /etc/hosts file](project5-1.png)
+
+# How to SSH to your webservers
+
+- First I create a new file to hold my private key using the "touch" command.
+
+- Next, and thanks to adding my webservers to my /etc/hosts file, I can use the ssh command to connect to either webserver through my proxy server.
+
+- I type "ssh -i aws-ceg3120 ubuntu@[hostname of webserver]
+
+![Connecting to web server 1](project5-2.png)
+
+![Connecting to web server 2](project5-3.png)
