@@ -35,3 +35,13 @@
 - Now to make sure that the HAProxy service is running, I type out a 'systemctl' command to get the status of the service.
 
 ![Getting the status of HAProxy](project5-4.png)
+
+- Now, I 'cd' over to "/etc/haproxy/ to get to my config file.
+
+![My haproxy directory w/ my config file](project5-5.png)
+
+- Since haproxy files are controlled by root, I use the 'sudo' command to edit my config file, "sudo vim haproxy.cfg"
+
+![My haproxy config file](project5-6.png)
+
+- 
