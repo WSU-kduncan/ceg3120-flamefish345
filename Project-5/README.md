@@ -54,6 +54,11 @@
 
 - Finally, in the 'backend' section 
 
+- After all of my configurations are set, I press 'ESC' to get out of insert mode, type ':wq' to save and quit vim.
+
+- Next, to make sure I have a valid config file, I type 'haproxy -c -f haproxy.cfg' and the output should either be an error or give me the message "Configuration file is valid".
+![checking validity of config file](project5-0.png)
+
 ![restarting the haproxy service and checking status](project5-7.png)
 
 ![performing an ssh command into web server 1](project5-8.png)
