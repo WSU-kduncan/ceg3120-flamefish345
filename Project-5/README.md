@@ -67,6 +67,8 @@
 
 - Now our proxy should be properly configured, we move on to our 2 webe servers.
 
+- I received hints and tips from these two sites: https://www.haproxy.com/blog/the-four-essential-sections-of-an-haproxy-configuration/ and https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts.
+
 # How to configure the index.html files in your web servers
 
 - First, I want to ssh from my proxy to either one of the web servers using the command from eariler, 'ssh -i .ssh/aws-ceg3120 ubuntu@web1'.
@@ -92,5 +94,7 @@
 - Thanks to our 'default' rules we setup in our haproxy.cfg, everytime we reload the page, we should swap between server 1 and server 2.
 
 ![web server 2 running in browser](project5-13.png)
+
+- I got help from the lecture on October 29th, 2021. https://wright.webex.com/recordingservice/sites/wright/recording/playback/3e4d4e631ae7103abfa50050568167e5
 
 Link to the proxy server: https://54.204.92.104/
