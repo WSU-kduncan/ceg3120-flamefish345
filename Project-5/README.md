@@ -59,17 +59,37 @@
 - Next, to make sure I have a valid config file, I type 'haproxy -c -f haproxy.cfg' and the output should either be an error or give me the message "Configuration file is valid".
 ![checking validity of config file](project5-0.png)
 
+- Now that my config is valid, I will need to restart haproxy to make sure the new settings are integrated. I type 'sudo systemctl restart haproxy.service'.
+
+- After that I type 'sudo systemctl status haproxy.service' to make sure haproxy is running.
+
 ![restarting the haproxy service and checking status](project5-7.png)
 
-![performing an ssh command into web server 1](project5-8.png)
+- Now our proxy should be properly configured, we move on to our 2 webe servers.
 
-![ssh-ing into web server 2](project5-9.png)
+# How to configure the index.html files in your web servers
+
+- First, I want to ssh from my proxy to either one of the web servers using the command from eariler, 'ssh -i .ssh/aws-ceg3120 ubuntu@web1'.
+
+- Now I need to locate my index file called 'index.html' which I checked earlier by accessing my proxy via browser and the Apache 2 documentation tells me that 'index.html' is located in '/var/www/http'. So I 'cd' over to that location.
 
 ![locatiing the index.html file in web server 1](project5-10.png)
 
+- The 'index.html.old' is the original file that I changed so I could make a new 'index' file. These files are also controlled by root so I will use sudo when I type 'sudo vim index.html' to edit the file.
+
 ![configuring index.html in web server 1](project5-11.png)
 
+- We copy the html code provided at the project 5 github: https://github.com/pattonsgirl/Fall2021-CEG3120/tree/main/Projects/Project5.
+
+- Then we paste the code into the 'index.html' file and then type ':wq' to save and quit.
+
+- We repeat the process in web server 2 and edit the file to include the code from the server 2 html code from the project 5 github.
+
+- Now we test out our new proxy and web servers by typing the public IP address into a browser the following pages should display.
+
 ![web server 1 running in browser](project5-12.png)
+
+- Thanks to our 'default' rules we setup in our haproxy.cfg, everytime we reload the page, we should swap between server 1 and server 2.
 
 ![web server 2 running in browser](project5-13.png)
 
