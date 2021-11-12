@@ -49,3 +49,21 @@
 - First we have the 'global' section, which houses our security and performance settings for our proxy. 'maxconn' is how many connections the proxy server will accept at a time. 'log' is to setup where alerts/warnings that occur on our proxy server getting 'logged' at a certain section of the server, in this case the directory /dev/log and in the file local10. 'user' and 'group' identifies where and when the proxy should drop certain privileges. 'stats socket' is our settings for the Runtime API for our proxy server.
 
 - Then we have the 'defaults' section 
+
+- In the 'frontend' section
+
+- Finally, in the 'backend' section 
+
+![restarting the haproxy service and checking status](project5-7.png)
+
+![performing an ssh command into web server 1](project5-8.png)
+
+![ssh-ing into web server 2](project5-9.png)
+
+![locatiing the index.html file in web server 1](project5-10.png)
+
+![configuring index.html in web server 1](project5-11.png)
+
+![web server 1 running in browser](project5-12.png)
+
+![web server 2 running in browser](project5-13.png)
