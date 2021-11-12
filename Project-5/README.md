@@ -44,4 +44,8 @@
 
 ![My haproxy config file](project5-6.png)
 
-- 
+- From top to bottom in our config file, we have four important sections of every HAProxy config file.
+
+- First we have the 'global' section, which houses our security and performance settings for our proxy. 'maxconn' is how many connections the proxy server will accept at a time. 'log' is to setup where alerts/warnings that occur on our proxy server getting 'logged' at a certain section of the server, in this case the directory /dev/log and in the file local10. 'user' and 'group' identifies where and when the proxy should drop certain privileges. 'stats socket' is our settings for the Runtime API for our proxy server.
+
+- Then we have the 'defaults section 
